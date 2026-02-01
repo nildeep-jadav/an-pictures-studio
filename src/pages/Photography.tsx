@@ -34,10 +34,11 @@ export default function PhotographyPage() {
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-headline mb-6">Photography</h1>
+          <p className="text-xl font-medium text-foreground mb-6">
+            Photography work created for brands, environments, and occasions
+          </p>
           <p className="text-body-lg text-muted-foreground">
-            Capturing moments, spaces, and products with a keen eye for composition 
-            and storytelling. From architectural interiors to wedding celebrations, 
-            each frame tells a story.
+            This collection features photography work spanning architecture, hospitality, events, and personal milestones. The focus remains on composition, lighting, and detail to accurately capture spaces, experiences, and moments as they are meant to be seen. Each project is approached with an understanding of context and purpose, ensuring the photographs serve both documentation and brand presentation.
           </p>
         </div>
 

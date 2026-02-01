@@ -34,11 +34,11 @@ export default function AboutPreview() {
 
           <div className="relative">
             <div className="aspect-[4/5] bg-secondary rounded-lg overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
-                <span className="text-6xl font-bold text-muted-foreground/20">
-                  DP
-                </span>
-              </div>
+              <img
+                src="/My Images/Nildeep-Jadav.png"
+                alt="Nildeep Jadav"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent rounded-lg -z-10" />

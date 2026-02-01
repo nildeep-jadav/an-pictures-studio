@@ -32,17 +32,26 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "glass border-b border-border/50 py-4" : "py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass border-b border-border/50 py-4" : "py-6"
+          }`}
       >
         <div className="container-full flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className="text-lg font-semibold tracking-tight hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-70 transition-opacity"
           >
-            Designer Portfolio
+            <img
+              src="/Essential Images/an-pictures-dark.svg"
+              alt="Logo"
+              className="h-8 w-auto dark:hidden"
+            />
+            <img
+              src="/Essential Images/an-pictures-light.svg"
+              alt="Logo"
+              className="h-8 w-auto hidden dark:block"
+            />
+            <span className="text-lg font-semibold tracking-tight">Nildeep Jadav</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,11 +60,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors link-underline ${
-                  isActive(link.href)
+                className={`text-sm font-medium transition-colors link-underline ${isActive(link.href)
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -67,7 +75,7 @@ export default function Navbar() {
               size="sm"
               className="border-foreground text-foreground hover:bg-foreground hover:text-background"
             >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </Button>

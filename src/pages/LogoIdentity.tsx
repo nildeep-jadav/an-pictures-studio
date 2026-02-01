@@ -21,10 +21,11 @@ export default function LogoIdentityPage() {
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-headline mb-6">Logo & Identity Design</h1>
+          <p className="text-xl font-medium text-foreground mb-6">
+            Logos developed for startups and growing brands across multiple industries
+          </p>
           <p className="text-body-lg text-muted-foreground">
-            Building memorable brand identities that resonate with audiences and stand the test 
-            of time. From startups to established businesses, every brand deserves a visual 
-            identity that tells its unique story.
+            This collection showcases logo design work created for startups and growing brands across a range of industries. Each project focuses on developing a clear and distinctive visual mark that reflects the brand’s purpose and positioning. The logos are designed to be practical, adaptable, and scalable, ensuring they work effectively across digital platforms, print materials, and real-world brand applications.
           </p>
         </div>
 

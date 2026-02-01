@@ -21,10 +21,11 @@ export default function BrandCampaignPage() {
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-headline mb-6">Brand & Campaign Visual Communication</h1>
+          <p className="text-xl font-medium text-foreground mb-6">
+            Visual design work developed for brand campaigns, social communication, and print collateral across industries
+          </p>
           <p className="text-body-lg text-muted-foreground">
-            Creating compelling visual narratives for brands that want to make an impact. 
-            From product launches to awareness campaigns, each project tells a unique story 
-            that resonates with its audience.
+            This collection brings together brand and campaign visual communication created for digital, social, and print use. The work focuses on translating brand objectives into clear, visually consistent outputs while adapting to different audiences, platforms, and communication goals. Each project demonstrates an approach rooted in structure, usability, and brand relevance
           </p>
         </div>
 

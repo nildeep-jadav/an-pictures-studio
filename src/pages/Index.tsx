@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import ClientLogos from "@/components/sections/ClientLogos";
-import AboutPreview from "@/components/sections/AboutPreview";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import ContactCTA from "@/components/sections/ContactCTA";
 import {
@@ -16,12 +15,11 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <ClientLogos />
-      <AboutPreview />
 
       {/* Featured Brand & Campaign */}
       <FeaturedProjects
         title="Brand & Campaign Visual Communication"
-        description="Creating compelling visual narratives for brands that want to make an impact. From launch campaigns to ongoing brand communication."
+        description="Visual design work developed for brand campaigns, social communication, and print collateral across industries"
         projects={brandCampaignProjects.slice(0, 5)}
         viewAllLink="/brand-campaign"
         category="Brand Campaign"
@@ -31,7 +29,7 @@ const Index = () => {
       <div className="bg-secondary">
         <FeaturedProjects
           title="Design Collaterals & Video Content"
-          description="Social media creatives, event materials, motion graphics, and campaign adaptations across multiple platforms."
+          description="Brand collaterals, digital static and video contents developed for digital and print use.."
           projects={designCollateralsProjects.slice(0, 5)}
           viewAllLink="/design-collaterals"
           category="Design Collaterals"
@@ -41,7 +39,7 @@ const Index = () => {
       {/* Featured Logo & Identity */}
       <FeaturedProjects
         title="Logo & Identity Design"
-        description="Building memorable brand identities that resonate with audiences and stand the test of time."
+        description="Logos developed for startups and growing brands across multiple industries"
         projects={logoIdentityProjects.slice(0, 5)}
         viewAllLink="/logo-identity"
         category="Brand Identity"
@@ -51,7 +49,7 @@ const Index = () => {
       <div className="bg-secondary">
         <FeaturedProjects
           title="Photography"
-          description="Capturing moments, spaces, and products with a keen eye for composition and storytelling."
+          description="Photography work created for brands, environments, and occasions"
           projects={photographyProjects.slice(0, 5).map((project) => ({
             id: project.id,
             title: project.title,

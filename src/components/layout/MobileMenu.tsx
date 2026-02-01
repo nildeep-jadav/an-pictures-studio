@@ -60,9 +60,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               <li>
                 <Link
                   to="/"
-                  className={`block text-2xl font-medium transition-colors ${
-                    isActive("/") ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`block text-2xl font-medium transition-colors ${isActive("/") ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   Home
                 </Link>
@@ -71,11 +70,10 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className={`block text-2xl font-medium transition-colors ${
-                      isActive(link.href)
+                    className={`block text-2xl font-medium transition-colors ${isActive(link.href)
                         ? "text-foreground"
                         : "text-muted-foreground hover:text-foreground"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -90,7 +88,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               asChild
               className="w-full bg-foreground text-background hover:bg-foreground/90"
             >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                 Download Resume
               </a>
             </Button>
