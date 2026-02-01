@@ -559,21 +559,170 @@ export const logoIdentityProjects: CaseStudyProject[] = [
   },
 ];
 
-export const photographyImages = [
-  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop", alt: "Arcedior Office Interior 1" },
-  { src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&auto=format&fit=crop", alt: "Arcedior Office Interior 2" },
-  { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&auto=format&fit=crop", alt: "Architecture Photography" },
-  { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop", alt: "Taj Hotel Gandhinagar 1" },
-  { src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&auto=format&fit=crop", alt: "Taj Hotel Gandhinagar 2" },
-  { src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&auto=format&fit=crop", alt: "Hotel Luxury Interior" },
-  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&auto=format&fit=crop", alt: "Wedding Photography 1" },
-  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop", alt: "Wedding Photography 2" },
-  { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&auto=format&fit=crop", alt: "Wedding Photography 3" },
-  { src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop", alt: "Product Photography 1" },
-  { src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&auto=format&fit=crop", alt: "Product Photography 2" },
-  { src: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1200&auto=format&fit=crop", alt: "Product Photography 3" },
-  { src: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&auto=format&fit=crop", alt: "Corporate Photography" },
-  { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop", alt: "Interior Photography 1" },
-  { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop", alt: "Interior Photography 2" },
-  { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop", alt: "Real Estate Photography" },
+export interface PhotographyProject {
+  id: string;
+  title: string;
+  category: string;
+  thumbnail: string;
+  images: { src: string; alt: string }[];
+}
+
+export const photographyProjects: PhotographyProject[] = [
+  {
+    id: "arcedior-office",
+    title: "Arcedior Office",
+    category: "Interior",
+    thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop", alt: "Arcedior Office Interior 1" },
+      { src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&auto=format&fit=crop", alt: "Arcedior Office Interior 2" },
+      { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&auto=format&fit=crop", alt: "Arcedior Office Interior 3" },
+    ],
+  },
+  {
+    id: "taj-hotel-gandhinagar",
+    title: "Taj Hotel Gandhinagar",
+    category: "Hospitality",
+    thumbnail: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop", alt: "Taj Hotel Gandhinagar 1" },
+      { src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&auto=format&fit=crop", alt: "Taj Hotel Gandhinagar 2" },
+      { src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&auto=format&fit=crop", alt: "Taj Hotel Gandhinagar 3" },
+    ],
+  },
+  {
+    id: "wedding-photography",
+    title: "Wedding Photography",
+    category: "Wedding",
+    thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&auto=format&fit=crop", alt: "Wedding Photography 1" },
+      { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop", alt: "Wedding Photography 2" },
+      { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&auto=format&fit=crop", alt: "Wedding Photography 3" },
+    ],
+  },
+  {
+    id: "product-photography",
+    title: "Product Photography",
+    category: "Product",
+    thumbnail: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop", alt: "Product Photography 1" },
+      { src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&auto=format&fit=crop", alt: "Product Photography 2" },
+      { src: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1200&auto=format&fit=crop", alt: "Product Photography 3" },
+    ],
+  },
+  {
+    id: "corporate-photography",
+    title: "Corporate Photography",
+    category: "Corporate",
+    thumbnail: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&auto=format&fit=crop", alt: "Corporate Photography 1" },
+      { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop", alt: "Corporate Photography 2" },
+    ],
+  },
+  {
+    id: "interior-photography",
+    title: "Interior Design Photography",
+    category: "Interior",
+    thumbnail: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop", alt: "Interior Photography 1" },
+      { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop", alt: "Interior Photography 2" },
+      { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop", alt: "Interior Photography 3" },
+    ],
+  },
+  {
+    id: "real-estate-photography",
+    title: "Real Estate Photography",
+    category: "Real Estate",
+    thumbnail: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop", alt: "Real Estate Photography 1" },
+      { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop", alt: "Real Estate Photography 2" },
+    ],
+  },
+  {
+    id: "food-photography",
+    title: "Food Photography",
+    category: "Food",
+    thumbnail: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=1200&auto=format&fit=crop", alt: "Food Photography 1" },
+      { src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&auto=format&fit=crop", alt: "Food Photography 2" },
+      { src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&auto=format&fit=crop", alt: "Food Photography 3" },
+    ],
+  },
+  {
+    id: "event-photography",
+    title: "Event Photography",
+    category: "Events",
+    thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&auto=format&fit=crop", alt: "Event Photography 1" },
+      { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop", alt: "Event Photography 2" },
+    ],
+  },
+  {
+    id: "portrait-photography",
+    title: "Portrait Photography",
+    category: "Portrait",
+    thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&auto=format&fit=crop", alt: "Portrait Photography 1" },
+      { src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&auto=format&fit=crop", alt: "Portrait Photography 2" },
+    ],
+  },
+  {
+    id: "landscape-photography",
+    title: "Landscape Photography",
+    category: "Landscape",
+    thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&fit=crop", alt: "Landscape Photography 1" },
+      { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&auto=format&fit=crop", alt: "Landscape Photography 2" },
+      { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop", alt: "Landscape Photography 3" },
+    ],
+  },
+  {
+    id: "architecture-photography",
+    title: "Architecture Photography",
+    category: "Architecture",
+    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&auto=format&fit=crop", alt: "Architecture Photography 1" },
+      { src: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=1200&auto=format&fit=crop", alt: "Architecture Photography 2" },
+    ],
+  },
+  {
+    id: "automotive-photography",
+    title: "Automotive Photography",
+    category: "Automotive",
+    thumbnail: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&auto=format&fit=crop", alt: "Automotive Photography 1" },
+      { src: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&auto=format&fit=crop", alt: "Automotive Photography 2" },
+    ],
+  },
+  {
+    id: "fashion-photography",
+    title: "Fashion Photography",
+    category: "Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1200&auto=format&fit=crop", alt: "Fashion Photography 1" },
+      { src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&auto=format&fit=crop", alt: "Fashion Photography 2" },
+    ],
+  },
+  {
+    id: "nature-photography",
+    title: "Nature Photography",
+    category: "Nature",
+    thumbnail: "https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=800&auto=format&fit=crop",
+    images: [
+      { src: "https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=1200&auto=format&fit=crop", alt: "Nature Photography 1" },
+      { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200&auto=format&fit=crop", alt: "Nature Photography 2" },
+    ],
+  },
 ];
