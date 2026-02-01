@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const navLinks = [
   { href: "/brand-campaign", label: "Brand & Campaign" },
@@ -59,11 +60,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <ThemeToggle />
             <Button
               asChild
               variant="outline"
               size="sm"
-              className="ml-4 border-foreground text-foreground hover:bg-foreground hover:text-background"
+              className="border-foreground text-foreground hover:bg-foreground hover:text-background"
             >
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume

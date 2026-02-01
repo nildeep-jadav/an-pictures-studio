@@ -8,7 +8,7 @@ import {
   brandCampaignProjects,
   designCollateralsProjects,
   logoIdentityProjects,
-  photographyImages,
+  photographyProjects,
 } from "@/data/projects";
 
 const Index = () => {
@@ -52,10 +52,11 @@ const Index = () => {
         <FeaturedProjects
           title="Photography"
           description="Capturing moments, spaces, and products with a keen eye for composition and storytelling."
-          projects={photographyImages.slice(0, 5).map((img, i) => ({
-            id: `photo-${i}`,
-            title: img.alt,
-            thumbnail: img.src,
+          projects={photographyProjects.slice(0, 5).map((project) => ({
+            id: project.id,
+            title: project.title,
+            thumbnail: project.thumbnail,
+            category: project.category,
           }))}
           viewAllLink="/photography"
           category="Photography"
