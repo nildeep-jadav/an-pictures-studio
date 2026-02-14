@@ -22,7 +22,7 @@ const Index = () => {
         description="Visual design work developed for brand campaigns, social communication, and print collateral across industries"
         projects={brandCampaignProjects.slice(0, 5)}
         viewAllLink="/brand-campaign"
-        category="Brand Campaign"
+        category="Brand & Campaign Visual Communication"
       />
 
       {/* Featured Design Collaterals */}
@@ -32,7 +32,7 @@ const Index = () => {
           description="Brand collaterals, digital static and video contents developed for digital and print use.."
           projects={designCollateralsProjects.slice(0, 5)}
           viewAllLink="/design-collaterals"
-          category="Design Collaterals"
+          category="Design Collaterals & Video Content"
         />
       </div>
 
@@ -42,7 +42,7 @@ const Index = () => {
         description="Logos developed for startups and growing brands across multiple industries"
         projects={logoIdentityProjects.slice(0, 5)}
         viewAllLink="/logo-identity"
-        category="Brand Identity"
+        category="Logo & Identity Design"
       />
 
       {/* Featured Photography */}

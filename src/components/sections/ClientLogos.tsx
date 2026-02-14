@@ -1,18 +1,128 @@
 const clients = [
-  { name: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" },
-  { name: "MINI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/MINI_logo.svg" },
-  { name: "Motorrad", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b3/BMW_Motorrad_logo.svg" },
-  { name: "Hyundai", logo: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hyundai_symbol.svg" },
-  { name: "Kia", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d0/KIA_logo3.svg" },
-  { name: "Hamleys", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Hamleys_Logo.png/640px-Hamleys_Logo.png" },
-  // Keeping these as text/without logo reference if no clear public URL found, 
-  // or you can add them if you have a source. 
-  // For now I will assume these might be rendered as text or we skip logo for them.
-  { name: "Vantara", logo: null },
-  { name: "WantASanta", logo: null },
+  {
+    name: "Arcedior",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_ARCEDIOR%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_ARCEDIOR%20-%20LIGHT.svg"
+  },
+  {
+    name: "Ashirvad Foundation",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_ASHIRVAD%20FOUNDATION%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_ASHIRVAD%20FOUNDATION%20-%20LIGHT.svg"
+  },
+  {
+    name: "Audiohive",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_AUDIOHIVE%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_AUDIOHIVE%20-%20LIGHT.svg"
+  },
+  {
+    name: "BMW",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_BMW%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_BMW-LIGHT.svg"
+  },
+  {
+    name: "BMW Motorrad",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_BMW%20MOTORRAD%20-%20DARK-08.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_BMW%20MOTORRAD%20-%20LIGHT.svg"
+  },
+  {
+    name: "Daffodil",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_DAFFODIL%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_DAFFODIL%20-%20LIGHT.svg"
+  },
+  {
+    name: "Dimensions 360",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_DIMENSIONS%20360%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_DIMENSIONS%20360%20-%20LIGHT.svg"
+  },
+  {
+    name: "Eminent Hyundai",
+    logoDark: null,
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_EMINENT%20HYUNDAI%20-%20LIGHT.svg"
+  },
+  {
+    name: "Hamleys",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_HAMLEYS%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_HAMLEYS%20-%20LIGHT.svg"
+  },
+  {
+    name: "Kia",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_KIA%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_KIA%20-%20LIGHT.svg"
+  },
+  {
+    name: "MG Select",
+    logoDark: null,
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_MG%20SELECT%20-%20LIGHT-18.svg"
+  },
+  {
+    name: "Mini",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_MINI%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_MINI%20-%20LIGHT.svg"
+  },
+  {
+    name: "Vantara",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_VANTARA%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_VANTARA%20-%20LIGHT.svg"
+  },
+  {
+    name: "WantASanta",
+    logoDark: "/Essential%20Images/Brand%20Logos/Brand%20Logos_WANTASANTA%20-%20DARK.svg",
+    logoLight: "/Essential%20Images/Brand%20Logos/Brand%20Logos_WANTASANTA%20-%20LIGHT.svg"
+  },
 ];
 
 export default function ClientLogos() {
+  const renderLogo = (client: typeof clients[0]) => {
+    // Case 1: Both Dark and Light logos exist (BEST)
+    if (client.logoLight && client.logoDark) {
+      return (
+        <>
+          {/* Light Mode: Use Light Logo */}
+          <img
+            src={client.logoLight}
+            alt={`${client.name} logo`}
+            className="h-8 md:h-12 w-auto object-contain dark:hidden"
+          />
+          {/* Dark Mode: Use Dark Logo */}
+          <img
+            src={client.logoDark}
+            alt={`${client.name} logo`}
+            className="h-8 md:h-12 w-auto object-contain hidden dark:block"
+          />
+        </>
+      );
+    }
+
+    // Case 2: Only Light logo exists (Assume it's dark text)
+    if (client.logoLight && !client.logoDark) {
+      return (
+        <img
+          src={client.logoLight}
+          alt={`${client.name} logo`}
+          className="h-8 md:h-12 w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
+        />
+      );
+    }
+
+    // Case 3: Only Dark logo exists (Assume it's light text)
+    if (!client.logoLight && client.logoDark) {
+      return (
+        <img
+          src={client.logoDark}
+          alt={`${client.name} logo`}
+          className="h-8 md:h-12 w-auto object-contain brightness-0 invert dark:brightness-100 dark:invert-0 transition-all duration-300"
+        />
+      );
+    }
+
+    // Fallback if no logo
+    return (
+      <span className="text-lg md:text-xl font-bold text-foreground">
+        {client.name}
+      </span>
+    );
+  };
+
   return (
     <section className="py-16 border-y border-border overflow-hidden bg-background">
       <div className="container-full">
@@ -29,17 +139,7 @@ export default function ClientLogos() {
                   key={`${client.name}-${index}`}
                   className="mx-8 md:mx-12 shrink-0 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  {client.logo ? (
-                    <img
-                      src={client.logo}
-                      alt={`${client.name} logo`}
-                      className="h-8 md:h-12 w-auto object-contain"
-                    />
-                  ) : (
-                    <span className="text-lg md:text-xl font-bold text-foreground">
-                      {client.name}
-                    </span>
-                  )}
+                  {renderLogo(client)}
                 </div>
               ))}
 
@@ -49,17 +149,7 @@ export default function ClientLogos() {
                   key={`${client.name}-duplicate-${index}`}
                   className="mx-8 md:mx-12 shrink-0 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  {client.logo ? (
-                    <img
-                      src={client.logo}
-                      alt={`${client.name} logo`}
-                      className="h-8 md:h-12 w-auto object-contain"
-                    />
-                  ) : (
-                    <span className="text-lg md:text-xl font-bold text-foreground">
-                      {client.name}
-                    </span>
-                  )}
+                  {renderLogo(client)}
                 </div>
               ))}
             </div>

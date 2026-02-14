@@ -1,6 +1,15 @@
 import { useEffect, useCallback } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FlipbookViewer from "./FlipbookViewer";
+
+export interface ProjectContentBlock {
+  type: "text" | "section_title" | "image" | "image_grid" | "pdf_flipbook";
+  text?: string;       // For text and section_title
+  src?: string;        // For single image or pdf url
+  alt?: string;        // For single image or flipbook title
+  images?: { src: string; alt: string }[]; // For image_grid
+}
 
 export interface CaseStudyProject {
   id: string;
@@ -11,6 +20,9 @@ export interface CaseStudyProject {
   images: string[];
   client?: string;
   year?: string;
+  challenge?: string;
+  solution?: string;
+  content?: ProjectContentBlock[];
 }
 
 interface CaseStudyPopupProps {
@@ -48,6 +60,17 @@ export default function CaseStudyPopup({
   }, [project, handleKeyDown]);
 
   if (!project) return null;
+
+  // Helper to render formatting in text (e.g., **bold**)
+  const renderFormattedText = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={index} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
 
   return (
     <div className="fixed inset-0 z-[100]">
@@ -119,19 +142,103 @@ export default function CaseStudyPopup({
               {project.description}
             </p>
 
-            {/* Image Gallery */}
-            <div className="space-y-8">
-              {project.images.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden bg-secondary">
-                  <img
-                    src={image}
-                    alt={`${project.title} - Image ${index + 1}`}
-                    loading="lazy"
-                    className="w-full h-auto"
-                  />
-                </div>
-              ))}
-            </div>
+            {(project.challenge || project.solution) && (
+              <div className="grid md:grid-cols-2 gap-12 mb-16">
+                {project.challenge && (
+                  <div>
+                    <h3 className="text-title mb-4">The Challenge</h3>
+                    <p className="text-body text-muted-foreground">
+                      {project.challenge}
+                    </p>
+                  </div>
+                )}
+                {project.solution && (
+                  <div>
+                    <h3 className="text-title mb-4">The Solution</h3>
+                    <p className="text-body text-muted-foreground">
+                      {project.solution}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Flexible Content Rendering (Identity Designed Layout) */}
+            {project.content && project.content.length > 0 && (
+              <div className="space-y-12 mb-16">
+                {project.content.map((block, index) => {
+                  if (block.type === "section_title" && block.text) {
+                    return (
+                      <h2 key={index} className="text-2xl md:text-3xl font-semibold mt-16 mb-6">
+                        {block.text}
+                      </h2>
+                    );
+                  }
+                  if (block.type === "text" && block.text) {
+                    return (
+                      <p key={index} className="text-body text-muted-foreground max-w-3xl">
+                        {renderFormattedText(block.text)}
+                      </p>
+                    );
+                  }
+
+                  if (block.type === "image_grid" && block.images) {
+                    return (
+                      <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                        {block.images.map((img, imgIndex) => (
+                          <div key={imgIndex} className="rounded-lg overflow-hidden bg-secondary">
+                            <img
+                              src={img.src}
+                              alt={img.alt || `Project Image ${imgIndex + 1}`}
+                              loading="lazy"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  }
+                  if (block.type === "image" && block.src) {
+                    return (
+                      <div key={index} className="rounded-lg overflow-hidden bg-secondary my-8">
+                        <img
+                          src={block.src}
+                          alt={block.alt || "Project Image"}
+                          loading="lazy"
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    );
+                  }
+
+                  if (block.type === "pdf_flipbook" && block.src) {
+                    return (
+                      <div key={index} className="my-12">
+                        <FlipbookViewer pdfUrl={block.src} title={block.alt} />
+                      </div>
+                    );
+                  }
+
+                  return null;
+                })}
+              </div>
+            )}
+
+            {/* Standard Image Gallery (Fallback if content not used) */}
+            {(!project.content || project.content.length === 0) && (
+              <div className="space-y-8">
+                {project.images.map((image, index) => (
+                  <div key={index} className="rounded-lg overflow-hidden bg-secondary">
+                    <img
+                      src={image}
+                      alt={`${project.title} - Image ${index + 1}`}
+                      loading="lazy"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
