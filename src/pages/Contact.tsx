@@ -47,8 +47,8 @@ export default function ContactPage() {
           <div>
             <h1 className="text-headline mb-6">Let's Work Together</h1>
             <p className="text-body-lg text-muted-foreground mb-12">
-              Have a project in mind? I'd love to hear about it. Whether you need 
-              brand design, campaign creatives, or visual identity work, let's 
+              Have a project in mind? I'd love to hear about it. Whether you need
+              brand design, campaign creatives, or visual identity work, let's
               discuss how we can collaborate.
             </p>
 
@@ -71,10 +71,10 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
                   <a
-                    href="mailto:hello@designer.com"
+                    href="mailto:nildeepjadavnpjd@gmail.com"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    hello@designer.com
+                    nildeepjadavnpjd@gmail.com
                   </a>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
               </h4>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/an._.pictures/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-secondary rounded-lg hover:bg-foreground hover:text-background transition-colors"
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/nildeep-jadav"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-secondary rounded-lg hover:bg-foreground hover:text-background transition-colors"
@@ -132,7 +132,7 @@ export default function ContactPage() {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="your@email.com"
+                  placeholder="nildeepjadavnpjd@gmail.com"
                   required
                   className="bg-background"
                 />

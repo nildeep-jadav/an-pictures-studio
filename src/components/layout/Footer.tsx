@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 
 const socialLinks = [
-  { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:hello@designer.com", icon: Mail, label: "Email" },
+  { href: "https://www.instagram.com/an._.pictures/", icon: Instagram, label: "Instagram" },
+  { href: "https://www.linkedin.com/in/nildeep-jadav", icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:nildeepjadavnpjd@gmail.com", icon: Mail, label: "Email" },
 ];
 
 const footerLinks = [
@@ -77,7 +77,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/resume.pdf"
+                  href="/CV_Nildeep_Jadav_2024.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"

@@ -11,7 +11,7 @@ const expertise = [
   "Visual Design",
   "Social Media Design",
   "Photography",
-  "Motion Graphics",
+
   "Print Design",
 ];
 
@@ -39,33 +39,41 @@ export default function AboutPage() {
           <div className="lg:col-span-2">
             <h1 className="text-headline mb-8">About Me</h1>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none block">
+              <div className="float-left w-full md:w-1/3 mr-8 mb-2">
+                <img
+                  src="/My Images/Nildeep-Jadav-01.png"
+                  alt="Nildeep Jadav"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
               <p className="text-body-lg text-muted-foreground mb-6">
-                I'm a Graphic Designer based in Gujarat, India, passionate about creating 
-                meaningful visual experiences that connect brands with their audiences. 
-                Currently, I'm crafting impactful work at <strong className="text-foreground">Dimensions360</strong>, 
-                where I collaborate with some of the most prestigious brands in the automotive 
+                I'm a Graphic Designer based in Gujarat, India, passionate about creating
+                meaningful visual experiences that connect brands with their audiences.
+                Currently, I'm crafting impactful work at <strong className="text-foreground">Dimensions360</strong>,
+                where I collaborate with some of the most prestigious brands in the automotive
                 and retail sectors.
               </p>
 
               <p className="text-body text-muted-foreground mb-6">
-                My approach to design combines strategic thinking with creative execution. 
-                I believe that great design is not just about aesthetics—it's about solving 
-                problems, communicating ideas, and creating emotional connections that drive 
+                My approach to design combines strategic thinking with creative execution.
+                I believe that great design is not just about aesthetics—it's about solving
+                problems, communicating ideas, and creating emotional connections that drive
                 results.
               </p>
 
               <p className="text-body text-muted-foreground mb-6">
-                Over the years, I've had the privilege of working with renowned brands like 
-                BMW, MINI, Hyundai, Kia, and Hamleys, helping them communicate their stories 
-                through compelling visual narratives. From brand launches to awareness campaigns, 
-                each project is an opportunity to push creative boundaries while delivering 
+                Over the years, I've had the privilege of working with renowned brands like
+                BMW, MINI, Hyundai, Kia, and Hamleys, helping them communicate their stories
+                through compelling visual narratives. From brand launches to awareness campaigns,
+                each project is an opportunity to push creative boundaries while delivering
                 measurable impact.
               </p>
 
               <p className="text-body text-muted-foreground">
-                When I'm not designing, you'll find me exploring photography, attending 
-                design conferences, or experimenting with new creative tools and techniques. 
+                When I'm not designing, you'll find me exploring photography, attending
+                design conferences, or experimenting with new creative tools and techniques.
                 I'm always eager to learn, grow, and take on new challenges.
               </p>
             </div>
@@ -85,7 +93,7 @@ export default function AboutPage() {
                 size="lg"
                 className="border-foreground text-foreground hover:bg-foreground hover:text-background"
               >
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume
                 </a>
               </Button>
@@ -94,6 +102,8 @@ export default function AboutPage() {
 
           {/* Sidebar */}
           <div className="space-y-12">
+
+
             {/* Quick Info */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-muted-foreground">
@@ -106,7 +116,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5" />
-                <span>hello@designer.com</span>
+                <span>nildeepjadavnpjd@gmail.com</span>
               </div>
             </div>
 

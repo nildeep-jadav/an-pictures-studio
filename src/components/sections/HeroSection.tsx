@@ -16,9 +16,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
           <div className="lg:col-span-3">
             {/* Eyebrow */}
-            <p className="text-sm uppercase tracking-widest text-muted-foreground mb-6 animate-fade-in">
-              Graphic Designer · Gujarat, India
-            </p>
+
 
             {/* Main Headline */}
             <h1 className="text-display mb-8 animate-fade-in-up">
@@ -62,7 +60,7 @@ export default function HeroSection() {
           {/* Hero Image */}
           <div className="relative animate-fade-in delay-200 hidden lg:block lg:col-span-1">
             <img
-              src="/My Images/Nildeep-Jadav.png"
+              src="/My Images/Nildeep-Jadav-01.png"
               alt="Nildeep Jadav"
               className="w-full h-auto"
             />
