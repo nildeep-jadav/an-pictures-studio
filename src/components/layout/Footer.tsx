@@ -110,7 +110,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Designer Portfolio. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Designed & Built with ♥
+            Designed & Built by Nildeep Jadav.
           </p>
         </div>
       </div>
