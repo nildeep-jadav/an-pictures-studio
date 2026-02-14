@@ -298,13 +298,13 @@ export const photographyProjects: PhotographyProject[] = [
     })),
   },
   {
-    id: "desert-beats",
-    title: "Desert Beats",
+    id: "wedding",
+    title: "Wedding",
     category: "Photography",
-    thumbnail: "/Projects/Photography/Desert Beats/1.webp",
-    images: Array.from({ length: 53 }, (_, i) => ({
-      src: `/Projects/Photography/Desert Beats/${i + 1}.webp`,
-      alt: `Desert Beats ${i + 1}`
+    thumbnail: "/Projects/Photography/Wedding/1.webp",
+    images: Array.from({ length: 29 }, (_, i) => ({
+      src: `/Projects/Photography/Wedding/${i + 1}.webp`,
+      alt: `Wedding ${i + 1}`
     })),
   },
   {
@@ -321,13 +321,13 @@ export const photographyProjects: PhotographyProject[] = [
     })),
   },
   {
-    id: "wedding",
-    title: "Wedding",
+    id: "desert-beats",
+    title: "Desert Beats",
     category: "Photography",
-    thumbnail: "/Projects/Photography/Wedding/1.webp",
-    images: Array.from({ length: 29 }, (_, i) => ({
-      src: `/Projects/Photography/Wedding/${i + 1}.webp`,
-      alt: `Wedding ${i + 1}`
+    thumbnail: "/Projects/Photography/Desert Beats/1.webp",
+    images: Array.from({ length: 53 }, (_, i) => ({
+      src: `/Projects/Photography/Desert Beats/${i + 1}.webp`,
+      alt: `Desert Beats ${i + 1}`
     })),
   },
   {

@@ -15,6 +15,7 @@ interface FeaturedProjectsProps {
   projects: FeaturedProject[];
   viewAllLink: string;
   category: string;
+  onProjectClick?: (project: any) => void;
 }
 
 export default function FeaturedProjects({
@@ -23,6 +24,7 @@ export default function FeaturedProjects({
   projects,
   viewAllLink,
   category,
+  onProjectClick,
 }: FeaturedProjectsProps) {
   return (
     <section className="py-20 md:py-28">
@@ -44,20 +46,40 @@ export default function FeaturedProjects({
 
         {/* Projects Grid */}
         <BentoGrid columns={3}>
-          {projects.slice(0, 3).map((project, index) => (
-            <BentoItem key={project.id} span={index === 0 ? 2 : 1}>
-              <Link to={viewAllLink}>
-                <ProjectCard
-                  id={project.id}
-                  title={project.title}
-                  category={category}
-                  thumbnail={project.thumbnail}
-                  onClick={() => {}}
-                  size={index === 0 ? "large" : "medium"}
-                />
-              </Link>
-            </BentoItem>
-          ))}
+          {projects.slice(0, 3).map((project, index) => {
+            const isLarge = index === 0;
+            const span = isLarge ? 2 : 1;
+
+            if (onProjectClick) {
+              return (
+                <BentoItem key={project.id} span={span}>
+                  <ProjectCard
+                    id={project.id}
+                    title={project.title}
+                    category={category}
+                    thumbnail={project.thumbnail}
+                    onClick={() => onProjectClick(project)}
+                    size={isLarge ? "large" : "medium"}
+                  />
+                </BentoItem>
+              );
+            }
+
+            return (
+              <BentoItem key={project.id} span={span}>
+                <Link to={viewAllLink} className="block h-full">
+                  <ProjectCard
+                    id={project.id}
+                    title={project.title}
+                    category={category}
+                    thumbnail={project.thumbnail}
+                    onClick={() => { }}
+                    size={isLarge ? "large" : "medium"}
+                  />
+                </Link>
+              </BentoItem>
+            );
+          })}
         </BentoGrid>
       </div>
     </section>
