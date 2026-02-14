@@ -75,7 +75,7 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="/CV_Nildeep_Jadav_2024.pdf"
                   target="_blank"
@@ -84,7 +84,7 @@ export default function Footer() {
                 >
                   Resume
                 </a>
-              </li>
+              </li> */}
             </ul>
             {/* Social Icons */}
             <div className="flex items-center gap-4 mt-8">

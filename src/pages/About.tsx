@@ -87,7 +87,7 @@ export default function AboutPage() {
               >
                 <Link to="/contact">Get In Touch</Link>
               </Button>
-              <Button
+              {/* <Button
                 asChild
                 variant="outline"
                 size="lg"
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume
                 </a>
-              </Button>
+              </Button> */}
             </div>
           </div>
 
@@ -116,7 +116,9 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5" />
-                <span>nildeepjadavnpjd@gmail.com</span>
+                <a href="mailto:nildeepjadavnpjd@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  nildeepjadavnpjd@gmail.com
+                </a>
               </div>
             </div>
 

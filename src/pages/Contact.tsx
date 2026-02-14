@@ -72,6 +72,8 @@ export default function ContactPage() {
                   <h4 className="font-medium mb-1">Email</h4>
                   <a
                     href="mailto:nildeepjadavnpjd@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     nildeepjadavnpjd@gmail.com

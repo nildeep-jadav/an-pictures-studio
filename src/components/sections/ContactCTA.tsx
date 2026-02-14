@@ -33,7 +33,7 @@ export default function ContactCTA() {
             size="lg"
             className="border-foreground text-foreground hover:bg-foreground hover:text-background px-8"
           >
-            <a href="mailto:nildeepjadavnpjd@gmail.com">nildeepjadavnpjd@gmail.com</a>
+            <a href="mailto:nildeepjadavnpjd@gmail.com" target="_blank" rel="noopener noreferrer">nildeepjadavnpjd@gmail.com</a>
           </Button>
         </div>
       </div>

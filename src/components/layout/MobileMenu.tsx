@@ -71,8 +71,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                   <Link
                     to={link.href}
                     className={`block text-2xl font-medium transition-colors ${isActive(link.href)
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                       }`}
                   >
                     {link.label}
@@ -84,14 +84,14 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
 
           {/* Resume Button */}
           <div className="p-6 border-t border-border">
-            <Button
+            {/* <Button
               asChild
               className="w-full bg-foreground text-background hover:bg-foreground/90"
             >
               <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                 Download Resume
               </a>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

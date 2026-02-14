@@ -61,15 +61,15 @@ export default function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={`text-sm font-medium transition-colors link-underline ${isActive(link.href)
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {link.label}
               </Link>
             ))}
             <ThemeToggle />
-            <Button
+            {/* <Button
               asChild
               variant="outline"
               size="sm"
@@ -78,7 +78,7 @@ export default function Navbar() {
               <a href="/CV_Nildeep_Jadav_2024.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
-            </Button>
+            </Button> */}
           </nav>
 
           {/* Mobile Menu Button */}
