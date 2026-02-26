@@ -16,16 +16,13 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("access_key", "d202118c-78ac-4af7-aec1-e04a108c1e42");
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("message", formData.message);
+      const formDataToSend = new FormData(e.currentTarget);
+      formDataToSend.append("access_key", import.meta.env.REACT_MY_WEB3FORMS_KEY || "");
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -37,6 +34,7 @@ export default function ContactPage() {
       if (data.success) {
         toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
+        e.currentTarget.reset();
       } else {
         toast.error("Something went wrong. Please try again.");
       }
@@ -132,6 +130,7 @@ export default function ContactPage() {
             <h2 className="text-title mb-6">Send a Message</h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -172,6 +171,11 @@ export default function ContactPage() {
                   className="bg-background resize-none"
                 />
               </div>
+
+              <div
+                className="cf-turnstile"
+                data-sitekey={import.meta.env.REACT_MY_SITE_KEY || ""}
+              ></div>
 
               <Button
                 type="submit"

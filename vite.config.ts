@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  envPrefix: ['VITE_', 'REACT_'],
   plugins: [react()],
   resolve: {
     alias: {
