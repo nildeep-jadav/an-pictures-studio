@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { Button } from "@/components/ui/button";
@@ -16,33 +16,41 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!window.turnstileToken) {
+      toast.error("Please complete captcha verification");
+      return;
+    }
+
     setIsSubmitting(true);
 
-    try {
-      const formDataToSend = new FormData(e.currentTarget);
-      formDataToSend.append("access_key", import.meta.env.REACT_MY_WEB3FORMS_KEY || "");
+    const form = new FormData(e.target);
+    form.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+    form.append("cf-turnstile-response", window.turnstileToken);
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formDataToSend,
+        body: form,
       });
 
-      const data = await response.json();
+      const result = await res.json();
 
-      if (data.success) {
+      if (result.success) {
         toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-        e.currentTarget.reset();
+        e.target.reset();
+        window.turnstile?.reset();
+        window.turnstileToken = null;
       } else {
-        toast.error("Something went wrong. Please try again.");
+        toast.error("Captcha verification failed");
       }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    } catch (err) {
+      toast.error("Something went wrong");
     }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (
@@ -53,6 +61,16 @@ export default function ContactPage() {
       [e.target.name]: e.target.value,
     }));
   };
+
+  useEffect(() => {
+    window.onTurnstileSuccess = (token) => {
+      window.turnstileToken = token;
+    };
+
+    return () => {
+      delete window.onTurnstileSuccess;
+    };
+  }, []);
 
   return (
     <Layout>
@@ -174,7 +192,8 @@ export default function ContactPage() {
 
               <div
                 className="cf-turnstile"
-                data-sitekey={import.meta.env.REACT_MY_SITE_KEY || ""}
+                data-sitekey={import.meta.env.VITE_MY_SITE_KEY || ""}
+                data-callback="onTurnstileSuccess"
               ></div>
 
               <Button
