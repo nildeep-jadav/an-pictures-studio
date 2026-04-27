@@ -9,7 +9,7 @@ const socialLinks = [
 
 const footerLinks = [
   { href: "/brand-campaign", label: "Brand & Campaign" },
-  { href: "/design-collaterals", label: "Design Collaterals" },
+  { href: "/design-collaterals", label: "Motion Graphics (coming soon)" },
   { href: "/logo-identity", label: "Logo & Identity" },
   { href: "/photography", label: "Photography" },
 ];

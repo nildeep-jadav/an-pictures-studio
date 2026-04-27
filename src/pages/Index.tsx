@@ -43,14 +43,14 @@ const Index = () => {
         onProjectClick={handleCaseStudyClick}
       />
 
-      {/* Featured Design Collaterals */}
+      {/* Featured Motion Graphics */}
       <div className="bg-secondary">
         <FeaturedProjects
-          title="Design Collaterals & Video Content"
-          description="Brand collaterals, digital static and video contents developed for digital and print use.."
+          title="Motion Graphics & Video Content"
+          description="Dynamic motion graphics, engaging video edits, and compelling visual storytelling."
           projects={designCollateralsProjects.slice(0, 5)}
           viewAllLink="/design-collaterals"
-          category="Design Collaterals & Video Content"
+          category="Motion Graphics & Video Content"
           onProjectClick={handleCaseStudyClick}
         />
       </div>

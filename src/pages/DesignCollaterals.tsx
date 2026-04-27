@@ -14,18 +14,18 @@ export default function DesignCollateralsPage() {
       <div className="container-full py-12">
         <Breadcrumbs
           items={[
-            { label: "Design Collaterals" },
+            { label: "Motion Graphics & Video Content" },
           ]}
         />
 
         {/* Page Header */}
         <div className="max-w-3xl mb-16">
-          <h1 className="text-headline mb-6">Design Collaterals & Video Content</h1>
+          <h1 className="text-headline mb-6">Motion Graphics & Video Content</h1>
           <p className="text-xl font-medium text-foreground mb-6">
-            Brand collaterals, digital static and video contents developed for digital and print use..
+            Dynamic motion graphics, engaging video edits, and compelling visual storytelling.
           </p>
           <p className="text-body-lg text-muted-foreground">
-            This collection brings together brand collaterals, digital static designs, and video content created for both digital and print platforms. The work includes posters, flyers, business cards, invitations, announcements, and short-form video pieces developed to support everyday brand and personal communication needs. Each project focuses on clarity, structure, and visual consistency, ensuring the designs remain functional, adaptable, and effective across formats and use cases.
+            This collection features a variety of motion graphics and video content tailored for digital platforms and marketing campaigns. The work encompasses animated typography, promotional videos, social media reels, and short-form storytelling pieces designed to capture attention and communicate brand messages effectively. Each project emphasizes fluid animation, strong pacing, and visual impact to create engaging viewer experiences.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function DesignCollateralsPage() {
       <CaseStudyPopup
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
-        breadcrumb="Design Collaterals"
+        breadcrumb="Motion Graphics & Video Content"
       />
     </Layout>
   );
